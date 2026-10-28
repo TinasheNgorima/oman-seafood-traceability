@@ -1,0 +1,14 @@
+dropped_edge,edge_type,weight,eig_first,eig_top3,exporter_eig,processor_eig,mafwr_eig,processor_eig_rank,processor_in_eig_top3,exporter_pagerank_first,exporter_betweenness_first,mafwr_domestic_betweenness_first
+MAFWR->FQCC,regulatory_authority,8,Exporter,Exporter;Processor;MAFWR,0.5204694919105414,0.4785701547251023,0.44324341886945745,2,True,True,True,True
+MAFWR->Processor,regulatory_authority,8,Exporter,Exporter;Processor;MAFWR,0.5139462697140861,0.44965952963863143,0.431703725124862,2,True,True,True,True
+MAFWR->Exporter,regulatory_authority,8,Processor,Processor;Exporter;MAFWR,0.4625369189096884,0.5020319921686276,0.4195612368838033,1,True,True,True,True
+MAFWR->Exporter,export_ban,19,Processor,Processor;Exporter;FQCC,0.41552618164155664,0.5339366669896322,0.36518141068110527,1,True,True,True,True
+FQCC->Processor,certification,25,Exporter,Exporter;MAFWR;Processor,0.5567278506764001,0.3949772794283002,0.49971349907012896,3,True,False,False,True
+Processor->Exporter,supply,25,MAFWR,MAFWR;Exporter;EU_FVO,0.40156615141236396,0.35915767026378387,0.522467835519205,4,False,False,False,True
+Exporter->EU_Buyer,supply,25,Processor,Processor;MAFWR;Exporter,0.4450979688097032,0.5135267176048615,0.4808021027311398,1,True,True,False,True
+EU_Buyer->EU_CA,notification,19,Exporter,Exporter;Processor;MAFWR,0.4968990591165522,0.49120447692669,0.4649538983661895,2,True,False,False,True
+EU_CA->RASFF,notification,19,Exporter,Exporter;Processor;MAFWR,0.5020830325106201,0.4889814590448602,0.4586907978533749,2,True,False,True,True
+RASFF->MAFWR,notification,19,Exporter,Exporter;Processor;MAFWR,0.5112333827188436,0.5047273004288011,0.43073909211513167,2,True,False,True,False
+EU_FVO->MAFWR,audit,15,Exporter,Exporter;Processor;MAFWR,0.5348466290473148,0.48789989729842637,0.4270643894862191,2,True,True,True,True
+EU_FVO->FQCC,audit,15,Exporter,Exporter;MAFWR;Processor,0.535658434546217,0.4665640218845236,0.4736189092748393,3,True,True,False,True
+EU_FVO->Processor,audit,15,Exporter,Exporter;MAFWR;Processor,0.5380911187940766,0.4340355002246182,0.4789874165951375,3,True,True,False,True

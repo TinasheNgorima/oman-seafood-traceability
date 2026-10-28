@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-10-28">
+    <creator>NetworkX 3.6.1</creator>
+  </meta>
+  <graph defaultedgetype="directed" mode="static" name="">
+    <attributes mode="static" class="edge">
+      <attribute id="1" title="edge_type" type="string" />
+      <attribute id="2" title="networkx_key" type="long" />
+    </attributes>
+    <attributes mode="static" class="node">
+      <attribute id="0" title="type" type="string" />
+    </attributes>
+    <nodes>
+      <node id="MAFWR" label="Ministry of Agriculture, Fisheries &amp; Water Resources">
+        <attvalues>
+          <attvalue for="0" value="regulator_domestic" />
+        </attvalues>
+      </node>
+      <node id="FQCC" label="Fish Quality Control Centre">
+        <attvalues>
+          <attvalue for="0" value="regulator_domestic" />
+        </attvalues>
+      </node>
+      <node id="EU_FVO" label="EU Food &amp; Veterinary Office (now DG SANTE)">
+        <attvalues>
+          <attvalue for="0" value="regulator_eu" />
+        </attvalues>
+      </node>
+      <node id="RASFF" label="Rapid Alert System for Food &amp; Feed">
+        <attvalues>
+          <attvalue for="0" value="regulator_eu" />
+        </attvalues>
+      </node>
+      <node id="EU_CA" label="EU Member State Competent Authorities">
+        <attvalues>
+          <attvalue for="0" value="regulator_eu" />
+        </attvalues>
+      </node>
+      <node id="Processor" label="Domestic processor establishments (QC-certified)">
+        <attvalues>
+          <attvalue for="0" value="firm_class" />
+        </attvalues>
+      </node>
+      <node id="Exporter" label="Exporter establishments">
+        <attvalues>
+          <attvalue for="0" value="firm_class" />
+        </attvalues>
+      </node>
+      <node id="EU_Buyer" label="EU importing buyers">
+        <attvalues>
+          <attvalue for="0" value="firm_class" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="MAFWR" target="FQCC" id="0" weight="8">
+        <attvalues>
+          <attvalue for="1" value="regulatory_authority" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="MAFWR" target="Processor" id="1" weight="8">
+        <attvalues>
+          <attvalue for="1" value="regulatory_authority" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="MAFWR" target="Exporter" id="2" weight="8">
+        <attvalues>
+          <attvalue for="1" value="regulatory_authority" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="MAFWR" target="Exporter" id="3" weight="19">
+        <attvalues>
+          <attvalue for="1" value="export_ban" />
+          <attvalue for="2" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="FQCC" target="Processor" id="4" weight="25">
+        <attvalues>
+          <attvalue for="1" value="certification" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="EU_FVO" target="MAFWR" id="5" weight="15">
+        <attvalues>
+          <attvalue for="1" value="audit" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="EU_FVO" target="FQCC" id="6" weight="15">
+        <attvalues>
+          <attvalue for="1" value="audit" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="EU_FVO" target="Processor" id="7" weight="15">
+        <attvalues>
+          <attvalue for="1" value="audit" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="RASFF" target="MAFWR" id="8" weight="19">
+        <attvalues>
+          <attvalue for="1" value="notification" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="EU_CA" target="RASFF" id="9" weight="19">
+        <attvalues>
+          <attvalue for="1" value="notification" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="Processor" target="Exporter" id="10" weight="25">
+        <attvalues>
+          <attvalue for="1" value="supply" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="Exporter" target="EU_Buyer" id="11" weight="25">
+        <attvalues>
+          <attvalue for="1" value="supply" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="EU_Buyer" target="EU_CA" id="12" weight="19">
+        <attvalues>
+          <attvalue for="1" value="notification" />
+          <attvalue for="2" value="0" />
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

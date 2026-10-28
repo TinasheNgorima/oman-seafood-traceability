@@ -1,0 +1,73 @@
+# `dvc repro` rebuilds every output from data/ and config/config.yaml. No remote is needed:
+# data/external is committed. data/raw is not distributed (see data/README.md): `dvc repro` needs the two
+# workbooks in place. Without them use `python scripts/run_all.py` (derived-only mode).
+stages:
+  layer1_descriptive:
+    cmd: python scripts/01_descriptive_layer1.py
+    deps: [scripts/01_descriptive_layer1.py, scripts/common.py, data/raw/Oman_Layer1_Clean_EN_v2.xlsx]
+    params: [config/config.yaml:layer1]
+    outs: [outputs/layer1_indicators.xlsx, outputs/layer1_indicators_long.csv, outputs/layer1_gov_hhi_sensitivity.csv]
+  layer1_sem:
+    cmd: python scripts/05_sem_layer1.py
+    deps: [scripts/05_sem_layer1.py, scripts/common.py, data/raw/Oman_Layer1_Clean_EN_v2.xlsx]
+    params: [config/config.yaml:seed, config/config.yaml:layer1]
+    outs: [outputs/layer1_sem_panel.csv, outputs/layer1_sem_estimates.csv, outputs/layer1_sem_fit.csv]
+  layer1_path:
+    cmd: python scripts/05b_path_layer1.py
+    deps: [scripts/05b_path_layer1.py, scripts/common.py, outputs/layer1_sem_panel.csv]
+    params: [config/config.yaml:seed, config/config.yaml:layer1.bootstrap_reps]
+    outs: [outputs/layer1_path_results.csv, outputs/layer1_alpha.csv]
+  layer3_panel:
+    cmd: python scripts/02_bose_replication_panel.py
+    deps: [scripts/02_bose_replication_panel.py, scripts/common.py, data/external/eurostat_eu27_imp_oman_hs03_annual_2000_2024.csv, data/external/ecb_eur_per_omr_annual_2000_2024.csv]
+    params: [config/config.yaml:layer3]
+    outs: [outputs/bose_replication_panel.csv]
+  layer3_ols:
+    cmd: python scripts/03_bose_lightweight_replication.py
+    deps: [scripts/03_bose_lightweight_replication.py, scripts/common.py, outputs/bose_replication_panel.csv]
+    params: [config/config.yaml:layer3]
+    outs: [outputs/bose_replication_results.csv, outputs/bose_replication_summary.txt]
+  layer3_robustness:
+    cmd: python scripts/03b_layer3_robustness.py
+    deps: [scripts/03b_layer3_robustness.py, scripts/common.py, outputs/bose_replication_panel.csv]
+    params: [config/config.yaml:layer3]
+    outs: [outputs/layer3_regime_split.csv, outputs/layer3_unit_roots.csv, outputs/layer3_residual_tests.csv, outputs/layer3_break_scan.csv, outputs/layer3_placebo.csv, outputs/layer3_pct_effect.csv]
+  layer2_network:
+    cmd: python scripts/04_layer2_network.py
+    deps: [scripts/04_layer2_network.py, scripts/common.py, data/raw/Oman_Layer23_Bose2017_Extract.xlsx]
+    outs: [outputs/layer2_nodes.csv, outputs/layer2_edges.csv, outputs/layer2_centrality.csv, outputs/layer2_network.gexf]
+  layer2_sensitivity:
+    cmd: python scripts/04b_layer2_sensitivity.py
+    deps: [scripts/04b_layer2_sensitivity.py, scripts/common.py, outputs/layer2_edges.csv, outputs/layer2_nodes.csv, outputs/layer2_centrality.csv]
+    params: [config/config.yaml:seed, config/config.yaml:layer2]
+    outs: [outputs/layer2_reweight_summary.csv, outputs/layer2_leave_one_out.csv, outputs/layer2_unweighted.csv, outputs/layer2_node_merge.csv, outputs/layer2_eig_vs_degree.csv]
+  figure3:
+    cmd: python scripts/06_figures.py
+    deps: [scripts/06_figures.py, scripts/common.py, outputs/layer2_nodes.csv, outputs/layer2_edges.csv, outputs/layer2_centrality.csv]
+    outs: [outputs/figures/figure_3_layer2_multigraph.pdf, outputs/figures/figure_3_layer2_multigraph.png]
+  verify_chapter:
+    cmd: python scripts/07_verify_chapter_claims.py
+    deps:
+      - scripts/07_verify_chapter_claims.py
+      - scripts/common.py
+      - data/raw/Oman_Layer1_Clean_EN_v2.xlsx
+      - outputs/bose_replication_results.csv
+      - outputs/bose_replication_panel.csv
+      - outputs/layer2_centrality.csv
+      - outputs/layer2_edges.csv
+      - outputs/layer1_indicators_long.csv
+      - outputs/layer1_gov_hhi_sensitivity.csv
+      - outputs/layer1_path_results.csv
+      - outputs/layer1_alpha.csv
+      - outputs/layer1_sem_fit.csv
+      - outputs/layer1_sem_panel.csv
+      - outputs/layer3_regime_split.csv
+      - outputs/layer3_unit_roots.csv
+      - outputs/layer3_residual_tests.csv
+      - outputs/layer3_break_scan.csv
+      - outputs/layer3_placebo.csv
+      - outputs/layer3_pct_effect.csv
+      - outputs/layer2_reweight_summary.csv
+      - outputs/layer2_leave_one_out.csv
+      - outputs/layer2_eig_vs_degree.csv
+    outs: [outputs/claims_report.csv]

@@ -1,0 +1,9 @@
+node,type,label
+MAFWR,regulator_domestic,"Ministry of Agriculture, Fisheries & Water Resources"
+FQCC,regulator_domestic,Fish Quality Control Centre
+EU_FVO,regulator_eu,EU Food & Veterinary Office (now DG SANTE)
+RASFF,regulator_eu,Rapid Alert System for Food & Feed
+EU_CA,regulator_eu,EU Member State Competent Authorities
+Processor,firm_class,Domestic processor establishments (QC-certified)
+Exporter,firm_class,Exporter establishments
+EU_Buyer,firm_class,EU importing buyers

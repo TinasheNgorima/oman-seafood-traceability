@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+.dvc/cache
+.dvc/tmp
+
+# Raw workbooks are not distributed. Keep data/raw/checksums.sha256 and data/raw/README only.
+data/raw/*.xlsx
+data/raw/ministerial_decisions/

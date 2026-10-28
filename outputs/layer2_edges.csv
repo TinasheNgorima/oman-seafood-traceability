@@ -1,0 +1,14 @@
+source,target,edge_type,weight
+MAFWR,FQCC,regulatory_authority,8
+MAFWR,Processor,regulatory_authority,8
+MAFWR,Exporter,regulatory_authority,8
+MAFWR,Exporter,export_ban,19
+FQCC,Processor,certification,25
+Processor,Exporter,supply,25
+Exporter,EU_Buyer,supply,25
+EU_Buyer,EU_CA,notification,19
+EU_CA,RASFF,notification,19
+RASFF,MAFWR,notification,19
+EU_FVO,MAFWR,audit,15
+EU_FVO,FQCC,audit,15
+EU_FVO,Processor,audit,15

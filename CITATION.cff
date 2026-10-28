@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it and the book chapter."
+title: "Replication code and derived data for: Seafood Traceability in an Emerging Economy: A Multi-Layer Framework for Food Safety, Sustainability, and Regulatory Compliance in Oman's Export Supply Chains"
+type: software
+authors:
+  - family-names: Ngorima
+    given-names: Tinashe
+    orcid: "https://orcid.org/0000-0001-6286-3969"
+    affiliation: "Sohar University, Sohar, Oman"
+version: 1.0.0
+date-released: "2026-10-28"
+license: MIT
+repository-code: "https://github.com/TinasheNgorima/oman-seafood-traceability"
+# doi: "10.5281/zenodo.XXXXXXX"      # uncomment after the Zenodo release mints the DOI
+keywords: [seafood traceability, sanitary and phytosanitary measures, Oman, replication, network analysis]

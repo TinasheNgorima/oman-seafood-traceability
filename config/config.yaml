@@ -1,0 +1,40 @@
+# Single source of truth for every analytical parameter used in the chapter.
+seed: 20260930
+paths:
+  raw: data/raw
+  external: data/external
+  outputs: outputs
+  figures: outputs/figures
+inputs:
+  layer1_xlsx: Oman_Layer1_Clean_EN_v2.xlsx
+  layer23_xlsx: Oman_Layer23_Bose2017_Extract.xlsx
+  eurostat_csv: eurostat_eu27_imp_oman_hs03_annual_2000_2024.csv
+  ecb_csv: ecb_eur_per_omr_annual_2000_2024.csv
+layer1:
+  national_label: "All Governorates"   # holds all Coastal + Commercial fleet records (see docs/DEVIATIONS.md)
+  tuna_genera: [Thunnus, Euthynnus, Sarda, Auxis, Katsuwonus]
+  bootstrap_reps: 5000
+layer3:
+  omr_usd_peg: 2.6008
+  ban_years: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+  ntb_years_observed: [2004, 2005, 2006, 2008, 2010, 2011, 2012, 2013]   # Bose et al. (2017) RASFF table
+  ntb_max_extra_years: [2014, 2015, 2016, 2017, 2018, 2019]               # D_NTB_max upper-bound sensitivity
+  crisis_years: [2009, 2010]
+  hac_maxlags: 2
+  windows:
+    S1_Bose_window_2001_2013: [2001, 2013]
+    S2_Extended_conservative: [2001, 2024]
+    S3_Extended_maximalist: [2001, 2024]
+  # Robustness checks added in response to peer review (03b_layer3_robustness.py, docs/DEVIATIONS.md C)
+  ban_regimes:                    # S4: D_BAN split by legal basis of the restriction
+    A: [2011, 2018]               # sanitary-compliance basis
+    B: [2019, 2024]               # domestic stock-management basis
+  break_scan: [2004, 2021]        # step dummy replacing D_BAN in S2, first and last start year
+  earlier_steps: [2005, 2006, 2007, 2008]   # step added to S2 alongside D_BAN
+  placebo_window: [2001, 2010]    # pre-restriction window for placebo starts
+  placebo_starts: [2004, 2005, 2006, 2007]
+  bg_lags: [1, 2]                 # Breusch-Godfrey lag orders
+layer2:
+  # Sensitivity checks added in response to peer review (04b_layer2_sensitivity.py)
+  perturb_draws: 10000            # each edge weight multiplied by U(perturb_range), independent draws
+  perturb_range: [0.5, 1.5]

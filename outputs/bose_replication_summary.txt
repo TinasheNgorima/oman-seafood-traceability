@@ -1,0 +1,95 @@
+========================================================================
+S1_Bose_window_2001_2013
+========================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    lnV   R-squared:                       0.937
+Model:                            OLS   Adj. R-squared:                  0.892
+Method:                 Least Squares   F-statistic:                     133.8
+No. Observations:                  13   AIC:                            -1.722
+Df Residuals:                       7   BIC:                             1.668
+Df Model:                           5                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          7.7950      2.832      2.753      0.006       2.245      13.345
+lnV_lag1       0.5156      0.151      3.412      0.001       0.219       0.812
+D_BAN         -0.6984      0.209     -3.344      0.001      -1.108      -0.289
+D_NTB         -0.0234      0.043     -0.548      0.584      -0.107       0.060
+lnER           0.5873      0.399      1.472      0.141      -0.195       1.369
+D_crisis      -0.4601      0.120     -3.839      0.000      -0.695      -0.225
+==============================================================================
+Omnibus:                        1.461   Durbin-Watson:                   2.515
+Prob(Omnibus):                  0.482   Jarque-Bera (JB):                1.115
+Skew:                           0.634   Prob(JB):                        0.573
+Kurtosis:                       2.328   Cond. No.                     1.49e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+[2] The condition number is large, 1.49e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+========================================================================
+S2_Extended_conservative
+========================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    lnV   R-squared:                       0.712
+Model:                            OLS   Adj. R-squared:                  0.632
+Method:                 Least Squares   F-statistic:                     25.21
+No. Observations:                  24   AIC:                             25.71
+Df Residuals:                      18   BIC:                             32.78
+Df Model:                           5                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          8.3827      2.057      4.075      0.000       4.351      12.415
+lnV_lag1       0.4385      0.121      3.621      0.000       0.201       0.676
+D_BAN         -0.5798      0.157     -3.703      0.000      -0.887      -0.273
+D_NTB          0.0050      0.092      0.055      0.956      -0.175       0.185
+lnER           1.4734      0.722      2.041      0.041       0.059       2.888
+D_crisis      -0.3644      0.115     -3.177      0.001      -0.589      -0.140
+==============================================================================
+Omnibus:                        3.460   Durbin-Watson:                   1.831
+Prob(Omnibus):                  0.177   Jarque-Bera (JB):                2.094
+Skew:                          -0.047   Prob(JB):                        0.351
+Kurtosis:                       4.444   Cond. No.                         691.
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+========================================================================
+S3_Extended_maximalist
+========================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    lnV   R-squared:                       0.715
+Model:                            OLS   Adj. R-squared:                  0.636
+Method:                 Least Squares   F-statistic:                     25.77
+No. Observations:                  24   AIC:                             25.49
+Df Residuals:                      18   BIC:                             32.56
+Df Model:                           5                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          7.9680      2.077      3.836      0.000       3.897      12.039
+lnV_lag1       0.4537      0.120      3.789      0.000       0.219       0.688
+D_BAN         -0.5786      0.161     -3.595      0.000      -0.894      -0.263
+D_NTB          0.0745      0.156      0.476      0.634      -0.232       0.381
+lnER           1.6278      0.629      2.590      0.010       0.396       2.860
+D_crisis      -0.3365      0.111     -3.031      0.002      -0.554      -0.119
+==============================================================================
+Omnibus:                        3.957   Durbin-Watson:                   1.832
+Prob(Omnibus):                  0.138   Jarque-Bera (JB):                2.644
+Skew:                           0.161   Prob(JB):                        0.267
+Kurtosis:                       4.594   Cond. No.                         720.
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+

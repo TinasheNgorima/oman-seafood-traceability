@@ -1,0 +1,32 @@
+{
+  "title": "Replication code and derived data: Seafood traceability in Oman's export supply chains (book chapter)",
+  "upload_type": "software",
+  "description": "Python pipeline, input snapshots and derived outputs that reproduce every table, figure and statistic in the book chapter 'Seafood Traceability in an Emerging Economy: A Multi-Layer Framework for Food Safety, Sustainability, and Regulatory Compliance in Oman's Export Supply Chains'. Includes a verification script that compares the figures reported in the chapter with the pipeline outputs. Code is released under the MIT licence. Derived data in outputs/ are released under CC BY 4.0. The raw workbooks are not redistributed.",
+  "creators": [
+    {
+      "name": "Ngorima, Tinashe",
+      "affiliation": "Sohar University, Sohar, Oman",
+      "orcid": "0000-0001-6286-3969"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "seafood traceability",
+    "sanitary and phytosanitary measures",
+    "Oman",
+    "replication",
+    "network analysis",
+    "export bans"
+  ],
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "10.1016/j.marpol.2017.04.013",
+      "relation": "isDerivedFrom",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "version": "1.0.0"
+}

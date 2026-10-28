@@ -1,0 +1,63 @@
+{
+  "python": "3.11.18",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "packages": {
+    "pandas": "3.1.0",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "statsmodels": "0.15.0",
+    "semopy": "2.3.11",
+    "networkx": "3.6.1",
+    "matplotlib": "3.11.2",
+    "openpyxl": "3.1.5",
+    "PyYAML": "6.0.3"
+  },
+  "fetched_fresh_external_data": false,
+  "mode": "full",
+  "skipped_stages": [],
+  "inputs_sha256": {
+    "data\\external\\ecb_eur_per_omr_annual_2000_2024.csv": "61e45f27b0636096ef9c0837a41dd95332b6dad934e7f2be718e278e262f610d",
+    "data\\external\\eurostat_eu27_imp_oman_hs03_annual_2000_2024.csv": "e1768d8ba1cf8150f3d312f73d8b205324d1114788d7e5f003059c41f52ca0b5",
+    "data\\raw\\Oman_Layer1_Clean_EN_v2.xlsx": "8fbe86d6430cb404fa3e4b397faeb465f5f6423d0daff0f0902917e567112fee",
+    "data\\raw\\Oman_Layer23_Bose2017_Extract.xlsx": "13cd78bf67c86abbecf1d7d66e5c9ad99041fd6290284f11616f40f5d176146e"
+  },
+  "outputs_sha256": {
+    "outputs\\bose_replication_panel.csv": "31bd09c08906f9e6a474cf6faafadbf678dd5b688b84fa5f1fbd25394a679b76",
+    "outputs\\bose_replication_results.csv": "f18893176950c3a67472d1e4ea1eb7a602085c27ba9fc8ae0613eb34b2dd0005",
+    "outputs\\layer1_alpha.csv": "b8fec79b332713b7b149129d26be73147c919917696b16cb0db031637a62875a",
+    "outputs\\layer1_gov_hhi_sensitivity.csv": "472db19ccd911b7ff28edb29fe02bd33f300aaaad8c02fe1bb0783f32bbb699a",
+    "outputs\\layer1_indicators_long.csv": "08b131ee5c1348259397e9d2c4bbe7c9842f45b83b298c0fd2c51823c2420e5c",
+    "outputs\\layer1_path_results.csv": "fed8d9b26124491ce50073b5a973a1ba06954e9a2439b87709d019158a1d4b68",
+    "outputs\\layer1_sem_estimates.csv": "9931165933d8ff97f6b8c0fd052a309f14cbbfb98c4eb29be6418b89394ff973",
+    "outputs\\layer1_sem_fit.csv": "4209c23eb248aa042d98bd7db5a50291e181842eeee47826ad069d4951579e0d",
+    "outputs\\layer1_sem_panel.csv": "d667e4ec03dc77ca7647608e431b94d1ad3b8d895dbfcd7514c133bd127b0fd5",
+    "outputs\\layer1_species_share_high.csv": "61ef93153288538d375aa0a9323d777629933b3733366a3870983446041b29fc",
+    "outputs\\layer2_centrality.csv": "65df860d34137b64489097f16cafcc435aa6cd6bbda5eb907e4c2f4034754624",
+    "outputs\\layer2_edges.csv": "2796f26f80769ebe70be6bc10cd11a3fcaa382a4afc82a50d1e78d392e02e785",
+    "outputs\\layer2_eig_vs_degree.csv": "331d53c0976551d19f151b57eaf387fc54a0b7144e6a38a815a54c6f04eaac69",
+    "outputs\\layer2_leave_one_out.csv": "58678c227ae9587864d69704587eeb6bba8937bca8125bb21eafcb992b800a40",
+    "outputs\\layer2_node_merge.csv": "60a71df91cdf70ad7d849b4cd042fd24800a56b9b7ade75bda88291f18f2c4b4",
+    "outputs\\layer2_nodes.csv": "3cbe91c3f75c98aba053ba7d8bf9a6a6fc5b9b24282b8f7de81cdc9232156815",
+    "outputs\\layer2_reweight_summary.csv": "82bbd8a47b65bdfda9836593744a2d917d2fefba9425ca9bd2980873fddfc6a6",
+    "outputs\\layer2_unweighted.csv": "69dd2cadf7e92b7aba1e758d9fe91561d6351994f40f006fbb1c3f7545e767c6",
+    "outputs\\layer3_break_scan.csv": "9e57cf6c883f3fd7903c9d71426ea94bd2e46ce8bb55a799538ce11d9ad08f91",
+    "outputs\\layer3_pct_effect.csv": "54befeb573b27d0ad8ccd59c4f879d82975ff973f3906c74d75ead61afe2c667",
+    "outputs\\layer3_placebo.csv": "a4d347e75b54c0fca0a87d7ab86558f3023bf8391bca7483a0f73f30d8434287",
+    "outputs\\layer3_regime_split.csv": "364b367161a997c120745bf10d1cbd5b27d76f8142ca57dad8b2ad275a55b1bc",
+    "outputs\\layer3_residual_tests.csv": "f5acc2b99719828cc966e014eadc68189d29477cfa7ed2916dba1bb728874754",
+    "outputs\\layer3_unit_roots.csv": "ac8d168b9b2f8c822d9c79f607e5e60ffc7f7debae5cb29db4ab5bee6c474ee4"
+  },
+  "stage_seconds": {
+    "01_descriptive_layer1.py": 6.3,
+    "05_sem_layer1.py": 8.8,
+    "05b_path_layer1.py": 53.5,
+    "02_bose_replication_panel.py": 0.6,
+    "03_bose_lightweight_replication.py": 2.3,
+    "03b_layer3_robustness.py": 2.3,
+    "04_layer2_network.py": 1.5,
+    "04b_layer2_sensitivity.py": 41.1,
+    "06_figures.py": 2.2,
+    "07_verify_chapter_claims.py": 0.7
+  },
+  "total_seconds": 119.4
+}

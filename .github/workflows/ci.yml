@@ -1,0 +1,24 @@
+name: reproduce
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Environment (Python 3.11, pinned)
+        run: |
+          uv venv --python 3.11 .venv
+          uv pip install --python .venv/bin/python -r requirements.txt
+      - name: Keep the committed deposit for comparison
+        run: cp -r outputs /tmp/deposit
+      - name: Reproduce all outputs (offline snapshots)
+        run: .venv/bin/python scripts/run_all.py
+      - name: Regenerated outputs equal the committed deposit (numeric, tol 1e-8)
+        run: .venv/bin/python scripts/compare_to_deposit.py /tmp/deposit
+      - name: Tests
+        run: .venv/bin/python -m pytest -q
+      - uses: actions/upload-artifact@v4
+        with:
+          name: outputs
+          path: outputs/
