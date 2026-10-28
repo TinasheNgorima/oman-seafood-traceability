@@ -5,7 +5,8 @@
 Code, input snapshots and derived data for the book chapter *Seafood Traceability in an Emerging Economy: A Multi-Layer Framework for Food Safety, Sustainability, and Regulatory Compliance in Oman's Export Supply Chains* (T. Ngorima, Sohar University).
 
 [![reproduce](https://github.com/TinasheNgorima/oman-seafood-traceability/actions/workflows/ci.yml/badge.svg)](https://github.com/TinasheNgorima/oman-seafood-traceability/actions)
-DOI: *to be added after the first Zenodo release.*
+
+DOI (all versions): [10.5281/zenodo.23725020](https://doi.org/10.5281/zenodo.23725020). Version 1.0.0: [10.5281/zenodo.23725021](https://doi.org/10.5281/zenodo.23725021).
 
 ## Data availability
 
