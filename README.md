@@ -1,5 +1,7 @@
 # Oman seafood traceability: replication repository
 
+[![DOI](https://zenodo.org/badge/1436776664.svg)](https://doi.org/10.5281/zenodo.23725020)
+
 Code, input snapshots and derived data for the book chapter *Seafood Traceability in an Emerging Economy: A Multi-Layer Framework for Food Safety, Sustainability, and Regulatory Compliance in Oman's Export Supply Chains* (T. Ngorima, Sohar University).
 
 [![reproduce](https://github.com/TinasheNgorima/oman-seafood-traceability/actions/workflows/ci.yml/badge.svg)](https://github.com/TinasheNgorima/oman-seafood-traceability/actions)

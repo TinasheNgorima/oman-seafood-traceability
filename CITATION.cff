@@ -11,5 +11,5 @@ version: 1.0.0
 date-released: "2026-10-28"
 license: MIT
 repository-code: "https://github.com/TinasheNgorima/oman-seafood-traceability"
-# doi: "10.5281/zenodo.XXXXXXX"      # uncomment after the Zenodo release mints the DOI
+doi: "10.5281/zenodo.23725020"
 keywords: [seafood traceability, sanitary and phytosanitary measures, Oman, replication, network analysis]
